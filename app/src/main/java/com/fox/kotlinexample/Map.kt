@@ -6,6 +6,16 @@ fun main() {
     println(doubleNumbers)
 
     val employees = listOfNumbers.map { "Employee №$it" }
-    println(employees)
 
+//    println(employees)
+
+    for (i in employees) {
+        println(i)
+    }
+    println()
+    println()
+
+    employees.forEach {
+        println(it)
+    }
 }

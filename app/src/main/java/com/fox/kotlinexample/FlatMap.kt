@@ -1,5 +1,8 @@
 package com.fox.kotlinexample
 
+import android.annotation.SuppressLint
+
+@SuppressLint("SuspiciousIndentation")
 fun main() {
     val revenueByWeek = listOf(
         listOf(8,5,1,4,6),
