@@ -2,14 +2,14 @@ package com.fox.kotlinexample
 
 fun main() {
 
-val result = modifyString("Hello world!") {  it.toUpperCase() }
+    val result = modifyString("Hello world!") { it.toUpperCase() }
     println(result)
 
-    val array  = (0..100).toMutableList()
- for (i in 0 until 100) {
-     array[i]
- }
-    val result2 = sumOfElements(array) {it.sum()}
+    val array = (0..100).toMutableList()
+    for (i in 0 until 100) {
+        array[i]
+    }
+    val result2 = sumOfElements(array) { it.sum() }
     println(result2)
 
     val list = (0..100).toList()
@@ -17,9 +17,11 @@ val result = modifyString("Hello world!") {  it.toUpperCase() }
     sumOfListElement(list) {
         println(it.sum())
     }
+
+
 }
 
-inline fun  modifyString(string: String, modify: (String) -> String): String {
+inline fun modifyString(string: String, modify: (String) -> String): String {
     return modify(string)
 }
 
@@ -29,4 +31,13 @@ private inline fun sumOfElements(array: MutableList<Int>, modify: (MutableList<I
 
 private inline fun sumOfListElement(list: List<Int>, operator: (List<Int>) -> Unit) {
     operator(list)
+}
+
+private inline fun customFun(number: Int, operator: Int.() -> Int): Int {
+    return number.operator()
+}
+
+private inline fun customFun2(number: Int, operator: () -> Unit) {
+    operator()
+
 }

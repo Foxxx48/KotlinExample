@@ -23,10 +23,10 @@ private fun printInfo(data: Map<String, List<Int>>) {
 
     val wrongValue = data.filter { it -> it.value.any { it < 0 } }.keys.joinToString()
     val weekAverage = validData.flatMap { it.value}.average()
-    val averageInMonth = validData.map { it.value.sum() }.average()
-    val listOfSum =  validData.map { it.value.sum() }
-    val maxAverage = listOfSum.max()
-    val minAverage = listOfSum.min()
+    val listSumOfWeek =  validData.map { it.value.sum() }
+    val averageInMonth = listSumOfWeek.average()
+    val maxAverage = listSumOfWeek.max()
+    val minAverage = listSumOfWeek.min()
     val monthWithMaxAverage = validData.filter { it.value.sum() == maxAverage }.keys.joinToString()
     val monthWithMinAverage = validData.filter { it.value.sum() == minAverage }.keys.joinToString()
 
