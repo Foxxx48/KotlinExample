@@ -1,14 +1,17 @@
 package com.fox.kotlinexample
 
-fun main() {
-    val month: String = "Septe"
+import com.fox.kotlinexample.Months.*
+import com.fox.kotlinexample.Seasons.*
 
-    val season = when(month) {
-        "December", "January", "February" -> "Winter"
-        "March", "April", "May" ->"Spring"
-        "June", "July", "August" -> "Summer"
-        "September", "October", "November" -> "Autumn"
-        else -> "Not found"
+fun main() {
+    val month = SEPTEMBER
+
+    val season = when (month) {
+        DECEMBER, JANUARY, FEBRUARY -> WINTER
+        MARCH, APRIL, MAY -> SPRING
+        JUNE, JULY, AUGUST -> SUMMER
+        SEPTEMBER, OCTOBER, NOVEMBER -> AUTUMN
+
     }
 
     println(season)
