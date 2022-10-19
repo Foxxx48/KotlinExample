@@ -12,11 +12,11 @@ fun main() {
         "August" to listOf(200, 100, 800, 300)
     )
 
-printInfo(data)
+printEmployeeInfo(data)
 
 }
 
-private fun printInfo(data: Map<String, List<Int>>) {
+private fun printEmployeeInfo(data: Map<String, List<Int>>) {
     val validData = data.filter { it.value.all { it > 0 }}
 
     println(validData.keys.joinToString())
