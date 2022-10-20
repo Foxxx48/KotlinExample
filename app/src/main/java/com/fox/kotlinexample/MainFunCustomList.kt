@@ -21,6 +21,11 @@ fun main() {
         println(list2.get(i))
     }
 
+    val list3 = CustomList.customListOf(1,2,2,3,4)
+    for (i in 0 until list3.size()) {
+        println(list3.get(i))
+    }
+
 
 
 }

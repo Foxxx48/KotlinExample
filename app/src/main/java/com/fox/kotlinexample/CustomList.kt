@@ -1,6 +1,6 @@
 package com.fox.kotlinexample
 
-class CustomList<T> : MyList <T> {
+class CustomList<T> : MyList<T> {
     var array = arrayOfNulls<Any>(10)
     var size = 0
 
@@ -42,6 +42,16 @@ class CustomList<T> : MyList <T> {
 
     override fun size(): Int {
         return size
+    }
+
+    companion object {
+        fun <T> customListOf(vararg elements: T): CustomList<T> {
+            val list = CustomList<T>()
+            for (element in elements) {
+                list.add(element)
+            }
+            return list
+        }
     }
 
 
