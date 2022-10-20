@@ -9,4 +9,7 @@ class Seller(name:String, age: Int): Worker(name,age), Cleanable {
     override fun clean() {
         println("Seller clean")
     }
+
+
+
 }
